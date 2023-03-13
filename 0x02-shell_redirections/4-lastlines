@@ -1,2 +1,2 @@
 #!/bin/bash
-head etc/passwd
+sed -10  etc/passwd
