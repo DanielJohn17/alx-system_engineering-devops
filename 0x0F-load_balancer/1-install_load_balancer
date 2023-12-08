@@ -10,8 +10,8 @@ frontend haproxy_balancer
     
 backend webservers
     balance roundrobin
-    server 26071-web-01 34.224.6.61:80 check
-    server 26071-web-02 52.90.14.200:80 check
+    server 329351-web-01 34.224.6.61:80 check
+    server 329351-web-02 52.90.14.200:80 check
 "
 # Update packages
 apt-get -y update
@@ -25,5 +25,5 @@ apt-get -y update
 # Install HAProxy
 apt-get -y install haproxy
 cp -a /etc/haproxy/haproxy.cfg{,.orig}
-echo "$balancer" >> /etc/haproxy/haproxy.cfg
+echo -e "$balancer" >> /etc/haproxy/haproxy.cfg
 service haproxy restart
