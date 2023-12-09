@@ -39,7 +39,7 @@ frontend http
         default_backend www.danieljohn17.tech-backend
 
 frontend www.danieljohn17.tech-https-frontend
-    bind    0.0.0.0:80 ssl crt /etc/letsencrypt/live/www.danieljohn17.tech/www.danieljohn17.tech.pem
+    bind *:443 ssl crt /etc/letsencrypt/live/www.danieljohn17.tech/www.danieljohn17.tech.pem
     http-request set-header X-Forwarded-Proto https
     default_backend www.danieljohn17.tech-backend
     
