@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-    Function that queries the Reddit API and returns
-    the number of subscribers for a given subreddit.
+Function that queries the Reddit API and returns
+the number of subscribers for a given subreddit.
 """
 import requests
 
@@ -25,10 +25,7 @@ def number_of_subscribers(subreddit):
 
     if 'data' not in res_json:
         return 0
-
     if 'subscribers' not in res_json.get('data'):
         return 0
 
-    subscribers = res_json['data']['subscribers']
-
-    return subscribers
+    return res_json['data']['subscribers']
