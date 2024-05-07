@@ -26,14 +26,14 @@ def top_ten(subreddit):
                             allow_redirects=False)
 
     if response.status_code != 200:
-        print(None)
+        print("None")
         return
 
     res_json = response.json()
     hot_posts = res_json['data']['children']
 
     if len(hot_posts) == 0:
-        print(None)
+        print("None")
     else:
         for post in hot_posts:
             print(post['data']['title'])
