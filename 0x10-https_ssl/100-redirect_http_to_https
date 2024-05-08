@@ -32,18 +32,18 @@ defaults
 	errorfile 502 /etc/haproxy/errors/502.http
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
-
-frontend http
-        bind *:80
-        http-request set-header X-Forwarded-Proto http
-        default_backend www.danieljohn17.tech-backend
+frontend haproxy_balancer
+    bind *:80
+    http-request set-header X-Forwarded-Proto http
+    default_backend webservers
 
 frontend www.danieljohn17.tech-https-frontend
     bind *:443 ssl crt /etc/letsencrypt/live/www.danieljohn17.tech/www.danieljohn17.tech.pem
     http-request set-header X-Forwarded-Proto https
-    default_backend www.danieljohn17.tech-backend
+    default_backend webservers
     
-backend www.danieljohn17.tech-backend
+backend webservers
     balance roundrobin
-    server 329351-web-01 34.224.6.61:80 check
-    server 329351-web-02 52.90.14.200:80 check
+    server 329351-web-01 35.153.16.137:80 check
+    server 329351-web-02 18.234.80.12:80 check
+
