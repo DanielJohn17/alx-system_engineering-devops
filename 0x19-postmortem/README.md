@@ -2,7 +2,7 @@
 
 ## Issue Summary:
 
-- **Duration:** The outage occurred on April 15, 2024, starting at 10:00 AM (UTC) and lasted for approximately 3 hours until 1:00 PM (UTC).
+- **Duration:** The outage occurred on June 21, 2024, starting at 10:00 AM (UTC) and lasted for approximately 3 hours until 1:00 PM (UTC).
 - **Impact:** The outage affected the availability of the main website's search functionality, resulting in slow response times and intermittent errors for users attempting to search for content. Approximately 30% of users experienced degradation in service quality during this time.
 - **Root Cause:** The root cause of the outage was identified as a database connection bottleneck caused by an unexpected surge in search queries, overwhelming the database server and causing it to become unresponsive.
 
